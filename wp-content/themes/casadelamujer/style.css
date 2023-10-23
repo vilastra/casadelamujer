@@ -1,0 +1,47 @@
+.bannerContent img {
+    object-fit: cover;
+    max-height: 35rem;
+    width: 100%;
+}
+
+.bannerContent .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20%;
+    top: 0;
+    left: 50px;
+    right: 50px;
+}
+
+.subContainer {
+    text-align: center;
+}
+
+.bannerContent {}
+
+.bannerContent h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.bannerContent p {
+    animation-delay: 0.4s;
+    margin: 0 auto 30px auto;
+    color: #fff;
+}
+
+
+.generalContent img {
+    float: right;
+    padding: 0rem 0px 0.938rem 1rem;
+    max-width: 30rem;
+    object-fit: cover;
+}
+
+.generalContent p {
+    text-align: justify;
+}

@@ -1,0 +1,420 @@
+<?php get_header(); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+
+
+
+    
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+                <?php
+                $args = array(
+                    'post_type' => 'CarruselInicio',
+                    'posts_per_page' => -1, // Mostrar todos los elementos
+                );
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) {
+                    $i = 0;
+                    while ($query->have_posts()) :
+                        $query->the_post();
+                        $titulo = get_the_title($query->ID);
+                ?>
+                        <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>" style="object-position: bottom; background-image: url(<?php echo get_field('imagen_elemento_carrusel') ?>)">
+                            <div class="carousel-container">
+                                <div class="container">
+                                    <h2 class="animate__animated animate__fadeInDown"><?php echo get_the_title($query->ID) ?></h2>
+                                    <p class="animate__animated animate__fadeInUp"><?php echo get_field('descripcion_elemento_carrusel'); ?></p>
+                                    <a href="<?php echo get_field('enlace_elemento_carrusel'); ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo get_field('boton_elemento_carrusel'); ?></a>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                        $i++;
+                    endwhile;
+                    wp_reset_postdata();
+                } else {
+                }
+                ?>
+
+
+                <!-- Slide 1 -->
+
+
+                <!-- Slide 2 -->
+                <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h2 class="animate__animated animate__fadeInDown">uggjh Ipsum Dolor</h2>
+                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Slide 3 -->
+                <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Featured Services Section ======= -->
+        <section id="featured-services" class="featured-services section-bg">
+            <div class="container">
+
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-laptop"></i></div>
+                            <h4 class="title"><a href="">Nuesta misión</a></h4>
+                            <p class="description">Contribuir a la superación de la pobreza de las mujeres jefas de hogar y sus familias, así
+                                como también promover la defensa de los derechos de los niños, niñas y adolescentes,
+                                fortaleciendo la igualdad, equidad de género y derechos humanos.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-briefcase"></i></div>
+                            <h4 class="title"><a href="">Nuestra visión</a></h4>
+                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
+                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Featured Services Section -->
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Nosotras</h2>
+                    <p>El Centro de Formación, Capacitación y Servicios Comunitarios” Casa de la Mujer pobladora
+                        Huamachuco”, es una organización social sin fines de lucro, fundada el 7 de marzo de 1989.
+                        Este centro posee personalidad jurídica y presta servicios a las poblaciones Huamachuco 1,
+                        2 y 3 de la comuna de Renca.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/RENCA_Casa-de-la-Mujer-de-Huamachuco-1035x690-1-1035x687-1.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                        <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> -->
+                        <p class="">
+                            Los orígenes de esta organización se remontan a un contexto nacional de crisis económica,
+                            política y social. A partir del golpe militar impuesto en Chile en 1973. Entonces serán las
+                            mujeres pobladoras quienes se irán conformando en agrupaciones y organizaciones de
+                            subsistencia y de lucha por los derechos humanos, bajo el alero de la iglesia. Si bien, en esta
+                            etapa de emergencia y crisis, la recuperación democrática parecía estar muy distante de la
+                            preocupación cotidiana de las mujeres, son estas las que se organizan en torno a las ollas
+                            comunes, talleres productivos y otras formas solidarias de autoayuda, como una búsqueda
+                            colectiva de las mujeres pobladoras por salir de esta situación de exclusión.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+
+
+        <!-- ======= Our Clients Section ======= -->
+        <section id="clients" class="clients">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Nos apoyan</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="clients-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/1579018299029.jpg" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/Amantani_Logo_Transparentcopy.png" class="img-fluid" alt=""></div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Our Clients Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Servicios que la CASA DE LA MUJER DE HUAMACHUCO entrega a la comunidad</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+                    <?php
+                    $args = array(
+                        'post_type' => 'Servicios',
+                        'posts_per_page' => -1, // Mostrar todos los elementos
+                    );
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) {
+                        $i = 0;
+                        while ($query->have_posts()) :
+                            $query->the_post();
+                            $titulo = get_the_title($query->ID);
+                    ?>
+                             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                              
+                                    <div class="icon-box <?php echo get_field('color_icono_servicio'); ?>">
+                                        <div class="icon">
+                                            <?php echo get_field('icono_servicio'); ?>
+                                        </div>
+                                        <h4><?php echo  get_the_title($query->ID); ?></h4>
+                                        <p><?php echo get_field('descripcion_corta_servicios'); ?></p>
+                                        <p class="pt-4"><a href="<?php echo get_permalink(); ?>">Conoce más...</a></p>
+                                    </div>
+                               
+                            </div>
+                    <?php
+                            $i++;
+                        endwhile;
+                        wp_reset_postdata();
+                    } else {
+                    }
+                    ?>
+
+
+                    <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box iconbox-orange ">
+                            <div class="icon">
+
+                                <i class="bi bi-brush"></i>
+                            </div>
+                            <h4><a href="">Talleres de Formación y Capacitación en oficios</a></h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box iconbox-pink">
+                            <div class="icon">
+
+                                <i class="bi bi-bandaid"></i>
+                            </div>
+                            <h4><a href="">Servicio de Kinesiología</a></h4>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box iconbox-yellow">
+                            <div class="icon">
+
+                                <i class="bi bi-person-arms-up"></i>
+                            </div>
+                            <h4><a href="">Club de adultos mayores: “Tiempos de solidaridad”</a></h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box iconbox-red">
+                            <div class="icon">
+                               
+                                <i class="bx bx-slideshow"></i>
+                            </div>
+                            <h4><a href="">Dele Cardo</a></h4>
+                            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box iconbox-teal">
+                            <div class="icon">
+                                
+                                <i class="bx bx-arch"></i>
+                            </div>
+                            <h4><a href="">Divera Don</a></h4>
+                            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3>Apoyanos</h3>
+                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="#">Call To Action</a>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Cta Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <!-- <section id="portfolio" class="portfolio">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Noticias</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+
+            </div>
+        </section> -->
+        <!-- End Portfolio Section -->
+
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Directorio</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/AIDA-MORENO-1024x1024-1-e1697939993803.jpg" alt="">
+                            <h4>Aída Moreno</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/AIDA-MORENO-1024x1024-1-e1697939993803.jpg" alt="">
+                            <h4>Aída Moreno</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/AIDA-MORENO-1024x1024-1-e1697939993803.jpg" alt="">
+                            <h4>Aída Moreno</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </section><!-- End Team Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contactanos</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Dirección:</h4>
+                                <p>Villarrica 2553, Huamachuco 2, Renca</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Correo:</h4>
+                                <p>info@example.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Teléfono:</h4>
+                                <p>+1 5589 55488 55s</p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1867.6769868832866!2d-70.6997520662292!3d-33.38992505894815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c6bf6cc680a7%3A0xaa77aac085316630!2sVillarrica%202553%2C%20Renca%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1697940388212!5m2!1ses-419!2scl" frameborder="0" style="border:0; width: 100%; height: 490px;" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+</body>
+
+</html>
+<?php get_footer(); ?>
