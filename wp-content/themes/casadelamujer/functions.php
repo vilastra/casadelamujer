@@ -31,6 +31,7 @@ function casadelamujer_enqueue_scripts()
   wp_enqueue_script('isotope-layout', get_template_directory_uri() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', $dependencies, '', true);
   wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', $dependencies, '', true);
   wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $dependencies, '', true);
+  wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', $dependencies, '', true);
 }
 function enqueue_jquery()
 {
@@ -136,6 +137,82 @@ $args = array(
   'menu_icon' => 'dashicons-buddicons-buddypress-logo'
 );
 register_post_type('Servicios', $args);
+
+$labels = array(
+  'name'                => _x('Directorio', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Directorio', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Directorio', 'casadelamujer'),
+  'parent_item_colon'   => __('Parent', 'casadelamujer'),
+  'all_items'           => __('Todas las personas', 'casadelamujer'),
+  'view_item'           => __('Ver persona', 'casadelamujer'),
+  'add_new_item'        => __('Agregar una nueva persona', 'casadelamujer'),
+  'add_new'             => __('Agregar una nueva persona', 'casadelamujer'),
+  'edit_item'           => __('Editar persona', 'casadelamujer'),
+  'update_item'         => __('Actualizar persona', 'casadelamujer'),
+  'search_items'        => __('Buscar una persona', 'casadelamujer'),
+  'not_found'           => __('Persona no encontrada', 'casadelamujer'),
+  'not_found_in_trash'  => __('Persona no encontrada', 'casadelamujer'),
+);
+$args = array(
+  'public' => true,
+  'label' => 'Directorio',
+  'labels' => $labels,
+  'supports' => array('title'),
+  'menu_position' => 4,
+  'menu_icon' => 'dashicons-businesswoman'
+);
+register_post_type('Directorio', $args);
+
+$labels = array(
+  'name'                => _x('Redes colaborativas', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Redes colaborativas', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Redes colaborativas', 'casadelamujer'),
+  'parent_item_colon'   => __('Parent', 'casadelamujer'),
+  'all_items'           => __('Todas las redes', 'casadelamujer'),
+  'view_item'           => __('Ver red', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nueva red', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva red', 'casadelamujer'),
+  'edit_item'           => __('Editar red', 'casadelamujer'),
+  'update_item'         => __('Actualizar red', 'casadelamujer'),
+  'search_items'        => __('Buscar una red', 'casadelamujer'),
+  'not_found'           => __('Red no encontrada', 'casadelamujer'),
+  'not_found_in_trash'  => __('Red no encontrada', 'casadelamujer'),
+);
+$args = array(
+  'public' => true,
+  'label' => 'Apoyo',
+  'labels' => $labels,
+  'supports' => array('title'),
+  'menu_position' => 4,
+  'menu_icon' => 'dashicons-admin-site'
+);
+register_post_type('Apoyo', $args);
+
+$labels = array(
+  'name'                => _x('Noticias', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Noticias', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Noticias', 'casadelamujer'),
+  'parent_item_colon'   => __('Parent', 'casadelamujer'),
+  'all_items'           => __('Todas las noticias', 'casadelamujer'),
+  'view_item'           => __('Ver noticia', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nueva noticia', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva noticia', 'casadelamujer'),
+  'edit_item'           => __('Editar noticia', 'casadelamujer'),
+  'update_item'         => __('Actualizar noticia', 'casadelamujer'),
+  'search_items'        => __('Buscar una noticia', 'casadelamujer'),
+  'not_found'           => __('Noticia no encontrada', 'casadelamujer'),
+  'not_found_in_trash'  => __('Noticia no encontrada', 'casadelamujer'),
+);
+$args = array(
+  'public' => true,
+  'label' => 'Noticia',
+  'labels' => $labels,
+  'supports' => array('title'),
+  'menu_position' => 4,
+  'menu_icon' => 'dashicons-list-view'
+);
+register_post_type('Noticia', $args);
+
 
 
 

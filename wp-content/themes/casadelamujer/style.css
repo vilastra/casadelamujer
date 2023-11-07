@@ -24,7 +24,7 @@
 .bannerContent h2 {
     color: #fff;
     margin-bottom: 20px;
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
 }
 
@@ -40,8 +40,87 @@
     padding: 0rem 0px 0.938rem 1rem;
     max-width: 30rem;
     object-fit: cover;
+    max-height: 25rem;
 }
 
 .generalContent p {
     text-align: justify;
+}
+
+.cta li {
+    color: #fff;
+}
+
+/* MODAL */
+.imgModal img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.modal-body .section-title {
+    margin: auto;
+}
+
+.modal-body .section-title img {
+    margin-top: 50px;
+    max-height: 150px;
+}
+
+.servicios-slider img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.servicios-slider {
+    width: 100%;
+    height: 250px;
+}
+
+/* target the active bullet */
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #9966ff;
+    opacity: 1;
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+/* MOBILE */
+@media screen and (max-width:1299px) {
+    .bannerContent img {
+        max-height: 18.75rem;
+        height: 18.75rem;
+    }
+
+    .bannerContent .container {
+        bottom: 50%;
+        top: 0;
+        left: 0px;
+        right: 50px;
+    }
+
+    .bannerContent h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .generalContent img {
+        float: none;
+        width: 100%;
+    }
+
+    .generalContent p {
+        padding: 15px;
+    }
+
+    .imgModal img {
+        display: none;
+    }
 }
