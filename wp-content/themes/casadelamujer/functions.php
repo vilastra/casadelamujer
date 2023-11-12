@@ -193,13 +193,13 @@ $labels = array(
   'singular_name'       => _x('Noticias', 'Post Type Singular Name', 'casadelamujer'),
   'menu_name'           => __('Noticias', 'casadelamujer'),
   'parent_item_colon'   => __('Parent', 'casadelamujer'),
-  'all_items'           => __('Todas las noticias', 'casadelamujer'),
-  'view_item'           => __('Ver noticia', 'casadelamujer'),
-  'add_new_item'        => __('Agregar nueva noticia', 'casadelamujer'),
-  'add_new'             => __('Agregar nueva noticia', 'casadelamujer'),
-  'edit_item'           => __('Editar noticia', 'casadelamujer'),
-  'update_item'         => __('Actualizar noticia', 'casadelamujer'),
-  'search_items'        => __('Buscar una noticia', 'casadelamujer'),
+  'all_items'           => __('Todas las Noticias', 'casadelamujer'),
+  'view_item'           => __('Ver Noticia', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nueva Noticia', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva Noticia', 'casadelamujer'),
+  'edit_item'           => __('Editar Noticia', 'casadelamujer'),
+  'update_item'         => __('Actualizar Noticia', 'casadelamujer'),
+  'search_items'        => __('Buscar una Noticia', 'casadelamujer'),
   'not_found'           => __('Noticia no encontrada', 'casadelamujer'),
   'not_found_in_trash'  => __('Noticia no encontrada', 'casadelamujer'),
 );
@@ -209,10 +209,9 @@ $args = array(
   'labels' => $labels,
   'supports' => array('title'),
   'menu_position' => 4,
-  'menu_icon' => 'dashicons-list-view'
+  'menu_icon' => 'dashicons-feedback'
 );
 register_post_type('Noticia', $args);
-
 
 
 

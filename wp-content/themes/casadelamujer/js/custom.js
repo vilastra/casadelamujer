@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         // Custom options for the first gallery
     });
 
-    new Swiper('.servicios-slider', {
+    new Swiper('.galeria-slider', {
         speed: 400,
         loop: false,
         centeredSlidesBounds:true,

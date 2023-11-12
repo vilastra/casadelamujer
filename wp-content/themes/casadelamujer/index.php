@@ -116,10 +116,10 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                         <p class="">
-                            Los orígenes de esta organización ocurrieron en un contexto nacional de crisis económica, 
-                            política y social a partir del golpe militar impuesto en Chile en 1973. 
-                            Como consecuencia de ello, fueron las mujeres pobladoras quienes conformaron 
-                            agrupaciones y organizaciones de subsistencia y de lucha por los derechos humanos, 
+                            Los orígenes de esta organización ocurrieron en un contexto nacional de crisis económica,
+                            política y social a partir del golpe militar impuesto en Chile en 1973.
+                            Como consecuencia de ello, fueron las mujeres pobladoras quienes conformaron
+                            agrupaciones y organizaciones de subsistencia y de lucha por los derechos humanos,
                             bajo el alero de la iglesia. Si bien, en esta
                             etapa de emergencia y crisis, la recuperación democrática parecía estar muy distante de la
                             preocupación cotidiana de las mujeres, son estas las que se organizan en torno a las ollas
@@ -131,6 +131,62 @@
                         </div>
                     </div>
 
+                </div>
+
+            </div>
+        </section>
+        <section id="noticias" class="noticias">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Noticias</h2>
+                    <p>Entérate de las últimas novedades</p>
+                </div>
+
+                <div class="row">
+                    <?php
+                    $args = array(
+                        'post_type' => 'Noticia',
+                        'posts_per_page' => 3,
+                        'orderby' => 'date',
+                        'order' => 'DESC'
+
+                    );
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) {
+                        $i = 0;
+                        while ($query->have_posts()) :
+                            $query->the_post();
+                            $titulo = get_the_title($query->ID);
+                            $subTitulo = get_field("sub_titulo_noticia");
+                    ?>
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+
+                                <div class="icon-box">
+                                    <img src="<?php echo get_field('imagen_banner_noticia'); ?>" alt="">
+
+                                    <h4><?php echo  get_the_title($query->ID); ?></h4>
+                                    <p class="fst-italic"><?php echo get_the_date('d M Y'); ?></p>
+                                    <p><?php $out = strlen($subTitulo) > 101 ? substr($subTitulo,0,101)."..." : $subTitulo; echo $out ; ?></p>
+                                    <p class="pt-4"><a href="<?php echo get_permalink(); ?>">Ver más...</a></p>
+                                </div>
+
+                            </div>
+                    <?php
+                            $i++;
+                        endwhile;
+                        wp_reset_postdata();
+                    } else {
+                    }
+                    ?>
+
+
+
+
+                </div>
+                <div class="text-center pt-5">
+                    <a class="btn-get-started animate__animated animate__fadeInUp scrollto" href="<?php echo get_site_url(); ?>/noticias">Ve todas las noticias</a>
                 </div>
 
             </div>

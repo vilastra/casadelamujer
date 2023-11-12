@@ -36,11 +36,9 @@ while (have_posts()) {
                 <h2>Galería</h2>
 
             </div>
-        <?php } ?>
-        <div class="servicios-slider swiper mb-5">
-            <div class="swiper-wrapper align-items-center">
+            <div class="galeria-slider swiper mb-5">
+                <div class="swiper-wrapper align-items-center">
 
-                <?php if (have_rows('galeria_servicio')) { ?>
                     <?php
                     while (have_rows('galeria_servicio')) {
                         the_row();
@@ -49,16 +47,27 @@ while (have_posts()) {
 
                     ?>
                         <div class="swiper-slide "><a href="<?php echo $imagen_galeria_servicio ?>" data-fancybox="gallery-a" data-caption="<?php echo $descripcion_imagen_galeria_servicio; ?>"> <img src="<?php echo  $imagen_galeria_servicio ?>" class="img-fluid zoom" alt=""></a></div>
-                       
-                <?php
+
+                    <?php
                     }
                     wp_reset_postdata();
-                }
-                ?>
+
+                    ?>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        <?php } ?>
+
+        <?php if (get_field('enlace_video_externo_servicio') != "") { ?>
+            <div class="section-title">
+                <h2>Video</h2>
 
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
+            <div class="generalContent embed-container mb-5">
+                <?php the_field('enlace_video_externo_servicio'); ?>
+            </div>
+        <?php } ?>
     </div>
 
 <?php };
