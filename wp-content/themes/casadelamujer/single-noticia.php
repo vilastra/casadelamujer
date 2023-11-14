@@ -31,7 +31,7 @@ while (have_posts()) {
         </div>
         <?php if (get_field('boton_conoce_mas_noticia') != "") { ?>
             <div class="generalContent mb-5 text-center">
-                <a class="btn-get-started animate__animated animate__fadeInUp scrollto keychainify-checked" target="_blank" href="<?php the_field('boton_conoce_mas_noticia'); ?>">Conoce más  <i class="ps-1 bi bi-box-arrow-up-right"></i></a>
+                <a class="btn-get-started animate__animated animate__fadeInUp scrollto keychainify-checked" target="_blank" href="<?php the_field('boton_conoce_mas_noticia'); ?>">Conoce más <i class="ps-1 bi bi-box-arrow-up-right"></i></a>
             </div>
         <?php } ?>
         <?php if (have_rows('galeria_noticia')) { ?>
@@ -72,6 +72,18 @@ while (have_posts()) {
                 <?php the_field('enlace_video_externo_noticia'); ?>
             </div>
         <?php } ?>
+        <?php if (get_field('video_noticia') != "") {
+            $video=  get_field('video_noticia');  ?>
+            <div class="section-title">
+                <h2>Video</h2>
+
+            </div>
+            <div class="generalContent mb-5">
+                <video style="background-color: #000;" width="100%" height="535" controls class="tm-mb-40">
+                    <source src="<?php echo $video ?>" type="video/mp4">
+                </video>
+            </div>
+        <?php } ?>
 
 
     </div>
@@ -82,7 +94,6 @@ while (have_posts()) {
 
 
 wp_reset_postdata(); ?>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
 
 <?php get_footer(); ?>

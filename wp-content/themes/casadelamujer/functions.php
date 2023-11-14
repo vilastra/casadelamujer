@@ -214,6 +214,32 @@ $args = array(
 register_post_type('Noticia', $args);
 
 
+$labels = array(
+  'name'                => _x('Cursos', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Cursos', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Cursos', 'casadelamujer'),
+  'parent_item_colon'   => __('Parent', 'casadelamujer'),
+  'all_items'           => __('Todos los cursos', 'casadelamujer'),
+  'view_item'           => __('Ver curso', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nuevo curso', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva curso', 'casadelamujer'),
+  'edit_item'           => __('Editar curso', 'casadelamujer'),
+  'update_item'         => __('Actualizar curso', 'casadelamujer'),
+  'search_items'        => __('Buscar un curso', 'casadelamujer'),
+  'not_found'           => __('Curso no encontrada', 'casadelamujer'),
+  'not_found_in_trash'  => __('Curso no encontrada', 'casadelamujer'),
+);
+$args = array(
+  'public' => true,
+  'label' => 'Cursos',
+  'labels' => $labels,
+  'supports' => array('title'),
+  'menu_position' => 4,
+  'menu_icon' => 'dashicons-welcome-learn-more'
+);
+register_post_type('Cursos', $args);
+
+
 
 // require_once plugin_dir_path(__FILE__). 'templates/admin.php';
 $menu_name = 'Main menu'; // Reemplaza 'nombre_del_menu' con el nombre de tu menú
@@ -245,3 +271,18 @@ function custom_breadcrumb()
 }
 
 ///  para enviar correo de la pagina contacto
+
+function wpacg_casa_de_la_mujer_admin_color_scheme()
+{
+  //Get the theme directory
+  $theme_dir = get_stylesheet_directory_uri();
+
+  //Casa de la mujer
+  wp_admin_css_color(
+    'casa_de_la_mujer',
+    __('Casa de la mujer'),
+    $theme_dir . '/css/casa_de_la_mujer_theme.css',
+    array('#5d2385', '#fff', '#955597', '#a805dd')
+  );
+}
+add_action('admin_init', 'wpacg_casa_de_la_mujer_admin_color_scheme');

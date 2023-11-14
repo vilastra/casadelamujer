@@ -34,6 +34,7 @@
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#services">Servicios para la comunidad</a></li>
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#team">Directorio y Equipo</a></li>
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#contact">Contactanos</a></li>
+                <li class="ps-3"><?php echo do_shortcode( '[weglot_switcher]' ); ?></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
