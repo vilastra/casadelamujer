@@ -885,6 +885,14 @@ section {
   fill: #11dbcf;
 }
 
+.services .iconbox-purple i {
+  color: #a478fb;
+}
+
+.services .iconbox-purple:hover .icon i {
+  color: #9966ff;
+}
+
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/

@@ -217,27 +217,27 @@ register_post_type('Noticia', $args);
 $labels = array(
   'name'                => _x('Cursos', 'Post Type General Name', 'casadelamujer'),
   'singular_name'       => _x('Cursos', 'Post Type Singular Name', 'casadelamujer'),
-  'menu_name'           => __('Cursos', 'casadelamujer'),
+  'menu_name'           => __('Cursos y Talleres', 'casadelamujer'),
   'parent_item_colon'   => __('Parent', 'casadelamujer'),
-  'all_items'           => __('Todos los cursos', 'casadelamujer'),
-  'view_item'           => __('Ver curso', 'casadelamujer'),
-  'add_new_item'        => __('Agregar nuevo curso', 'casadelamujer'),
-  'add_new'             => __('Agregar nueva curso', 'casadelamujer'),
-  'edit_item'           => __('Editar curso', 'casadelamujer'),
-  'update_item'         => __('Actualizar curso', 'casadelamujer'),
-  'search_items'        => __('Buscar un curso', 'casadelamujer'),
-  'not_found'           => __('Curso no encontrada', 'casadelamujer'),
-  'not_found_in_trash'  => __('Curso no encontrada', 'casadelamujer'),
+  'all_items'           => __('Todos los cursos y talleres', 'casadelamujer'),
+  'view_item'           => __('Ver curso o taller', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nuevo curso o taller', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva curso o taller', 'casadelamujer'),
+  'edit_item'           => __('Editar curso o taller', 'casadelamujer'),
+  'update_item'         => __('Actualizar curso o taller', 'casadelamujer'),
+  'search_items'        => __('Buscar un curso o taller', 'casadelamujer'),
+  'not_found'           => __('Curso o taller no encontrado', 'casadelamujer'),
+  'not_found_in_trash'  => __('Curso o taller no encontrado', 'casadelamujer'),
 );
 $args = array(
   'public' => true,
-  'label' => 'Cursos',
+  'label' => 'CursosTalleres',
   'labels' => $labels,
   'supports' => array('title'),
   'menu_position' => 4,
   'menu_icon' => 'dashicons-welcome-learn-more'
 );
-register_post_type('Cursos', $args);
+register_post_type('CursosTalleres', $args);
 
 
 
