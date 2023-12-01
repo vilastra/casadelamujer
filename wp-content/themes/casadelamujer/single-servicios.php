@@ -11,6 +11,7 @@ while (have_posts()) {
     $imagen_servicio = get_field('imagen_servicio');
     $imagen_cuerpo_servicio = get_field('imagen_cuerpo_servicio');
     $descripcion_larga_servicios = get_field('descripcion_larga_servicios');
+    $enlace_informacion_servicio = get_field('enlace_informacion_servicio');
 
 ?>
     <div class="bannerContent">
@@ -31,6 +32,11 @@ while (have_posts()) {
             <img class="d-none d-lg-block" src="<?php echo $imagen_cuerpo_servicio; ?>">
             <?php echo $descripcion_larga_servicios; ?>
         </div>
+        <?php if (get_field('enlace_informacion_servicio') != "") { ?>
+            <div class="generalContent mb-5 text-center">
+                <a class="btn-get-started animate__animated animate__fadeInUp scrollto keychainify-checked" href="<?php echo $enlace_informacion_servicio["url"] ?>"><?php echo $enlace_informacion_servicio["title"] ?> <i class="ps-1 bi bi-box-arrow-up-right"></i></a>
+            </div>
+        <?php } ?>
         <?php if (have_rows('galeria_servicio')) { ?>
             <div class="section-title">
                 <h2>Galería</h2>
@@ -59,15 +65,35 @@ while (have_posts()) {
             </div>
         <?php } ?>
 
-        <?php if (get_field('enlace_video_externo_servicio') != "") { ?>
+        <?php if (have_rows('videos_servicio')) { ?>
             <div class="section-title">
-                <h2>Video</h2>
-
+                <h2>Videos</h2>
             </div>
-            <div class="generalContent embed-container mb-5">
-                <?php the_field('enlace_video_externo_servicio'); ?>
+            <div class="video-slider swiper mb-5">
+                <div class="swiper-wrapper align-items-center">
+                    <?php
+                    while (have_rows('videos_servicio')) {
+                        the_row();
+                    ?>
+                        <?php if (get_sub_field('video_interno_servicio') != "") { ?>
+                            <div class="swiper-slide mb-5"> <video style="background-color: #000;" width="100%" controls class="tm-mb-40">
+                                    <source src="<?php echo get_sub_field('video_interno_servicio') ?>" type="video/mp4">
+                                </video></div>
+                        <?php } else if (get_sub_field('video_externo_servicio') != "") { ?>
+                            <div class="swiper-slide mb-5"> <?php the_sub_field('video_externo_servicio'); ?></div>
+                        <?php } ?>
+                    <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         <?php } ?>
+        <div class="generalContent text-center mb-5">
+            <p class="text-center">Comparte este servicio</p>
+            <?php echo do_shortcode('[addtoany]'); ?>
+        </div>
     </div>
 
 <?php };

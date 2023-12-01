@@ -6,6 +6,9 @@ jQuery(document).ready(function ($) {
     Fancybox.bind('[data-fancybox="gallery-a"]', {
         // Custom options for the first gallery
     });
+    Fancybox.bind('[data-fancybox="gallery-b"]', {
+        // Custom options for the first gallery
+    });
 
     new Swiper('.galeria-slider', {
         speed: 400,
@@ -24,6 +27,44 @@ jQuery(document).ready(function ($) {
         breakpoints: {
             320: {
                 slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 40
+            },
+            480: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 60
+            },
+            640: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 80
+            },
+            992: {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+                spaceBetween: 120
+            }
+        }
+    });
+
+    new Swiper('.video-slider', {
+        speed: 400,
+        loop: false,
+        centeredSlidesBounds:true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true
+        },
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
                 spaceBetween: 40
             },
             480: {
@@ -31,12 +72,12 @@ jQuery(document).ready(function ($) {
                 spaceBetween: 60
             },
             640: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 80
             },
             992: {
-                slidesPerView: 4,
-                spaceBetween: 120
+                slidesPerView: 3,
+                spaceBetween: 80
             }
         }
     });

@@ -207,12 +207,15 @@ $args = array(
   'public' => true,
   'label' => 'Noticia',
   'labels' => $labels,
-  'supports' => array('title'),
+  'public' => true,
+  'has_archive' => true,
+  'supports' => array('title', 'thumbnail'),
   'menu_position' => 4,
   'menu_icon' => 'dashicons-feedback'
 );
+add_theme_support('post-thumbnails');
+add_post_type_support('Noticia', 'thumbnail');
 register_post_type('Noticia', $args);
-
 
 $labels = array(
   'name'                => _x('Cursos', 'Post Type General Name', 'casadelamujer'),
@@ -233,12 +236,92 @@ $args = array(
   'public' => true,
   'label' => 'CursosTalleres',
   'labels' => $labels,
-  'supports' => array('title'),
+  'public' => true,
+  'has_archive' => true,
+  'supports' => array('title', 'thumbnail'),
   'menu_position' => 4,
   'menu_icon' => 'dashicons-welcome-learn-more'
 );
-register_post_type('CursosTalleres', $args);
 
+add_theme_support('post-thumbnails');
+add_post_type_support('CursosTalleres', 'thumbnail');
+register_post_type('CursosTalleres', $args);
+$labels = array(
+  'name'                => _x('Nosotras', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Nosotras', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Nosotras', 'casadelamujer'),
+  'parent_item_colon'   => __('Parent', 'casadelamujer'),
+  'all_items'           => __('Nosotras', 'casadelamujer'),
+  'view_item'           => __('Ver Nosotras', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nuevo Nosotras', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva Nosotras', 'casadelamujer'),
+  'edit_item'           => __('Editar Nosotras', 'casadelamujer'),
+  'update_item'         => __('Actualizar Nosotras', 'casadelamujer'),
+  'search_items'        => __('Buscar Nosotras', 'casadelamujer'),
+  'not_found'           => __('Nosotras no encontrado', 'casadelamujer'),
+  'not_found_in_trash'  => __('Nosotras no encontrado', 'casadelamujer'),
+);
+$args = array(
+  'public' => true,
+  'label' => 'Nosotras',
+  'labels' => $labels,
+  'capabilities' => array(
+    'create_posts' => false, // Removes support for the "Add New" function ( use 'do_not_allow' instead of false for multisite set ups )
+  ),
+  'map_meta_cap' => true, // Set to `false`, if users are not allowed to edit/delete existing posts
+  'supports' => array('title'),
+  'menu_position' => 4,
+  'menu_icon' => 'dashicons-groups'
+);
+register_post_type('Nosotras', $args);
+
+
+
+// ======== ACCIONES PARA EVITAR ELIMINAR UN CONTENIDO ========
+global $noborrar;
+$noborrar = array("nosotras");
+add_filter('post_row_actions', 'remove_row_actions_post_delete', 10, 2);
+function remove_row_actions_post_delete($actions, $post)
+{
+  if (in_array($post->post_type, $GLOBALS['noborrar'])) {
+    unset($actions['clone']);
+    unset($actions['trash']);
+  }
+  return $actions;
+}
+function remove_row_actions_page_delete($actions)
+{
+  if (get_post_type() === 'page') {
+    unset($actions['clone']);
+    unset($actions['trash']);
+    return $actions;
+  }
+}
+add_action('admin_head', function () {
+  $current_screen = get_current_screen();
+  if (
+    'post' === $current_screen->base &&
+    in_array($current_screen->post_type, $GLOBALS['noborrar'])
+  ) :
+?>
+    <style>
+      #delete-action {
+        display: none;
+      }
+
+      #preview-action,
+      .updated a {
+        display: none;
+      }
+    </style>
+<?php
+  endif;
+});
+
+$role = get_role('administrator');
+$role->remove_cap('delete_published_pages');
+$role->add_cap('publish_pages');
+// ======== FIN DE ACCIONES PARA EVITAR ELIMINAR UN CONTENIDO ========
 
 
 // require_once plugin_dir_path(__FILE__). 'templates/admin.php';

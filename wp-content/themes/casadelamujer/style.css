@@ -1,235 +1,272 @@
 .bannerContent img {
-    object-fit: cover;
-    max-height: 35rem;
-    width: 100%;
+  object-fit: cover;
+  max-height: 35rem;
+  width: 100%;
 }
 
 .bannerContent .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 20%;
-    top: 0;
-    left: 50px;
-    right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20%;
+  top: 0;
+  left: 50px;
+  right: 50px;
 }
 
 .subContainer {
-    text-align: center;
+  text-align: center;
 }
 
 .bannerContent {}
 
 .bannerContent h2 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 3rem;
-    font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .bannerContent p {
-    animation-delay: 0.4s;
-    margin: 0 auto 30px auto;
-    color: #fff;
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  color: #fff;
 }
 
 
 .generalContent img {
-    float: right;
-    padding: 0rem 0px 0.938rem 1rem;
-    max-width: 30rem;
-    object-fit: cover;
-    max-height: 25rem;
+  float: right;
+  padding: 0rem 0px 0.938rem 1rem;
+  max-width: 30rem;
+  object-fit: cover;
+  max-height: 25rem;
 }
 
 .generalContent p {
-    text-align: justify;
+  text-align: justify;
 }
 
 .cta li {
-    color: #fff;
+  color: #fff;
 }
 
 /* MODAL */
 .imgModal img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .modal-body .section-title {
-    margin: auto;
+  margin: auto;
 }
 
 .modal-body .section-title img {
-    margin-top: 50px;
-    max-height: 150px;
+  margin-top: 50px;
+  max-height: 150px;
 }
 
 .galeria-slider img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .galeria-slider {
-    width: 100%;
-    height: 250px;
+  width: 100%;
+  height: 250px;
 }
 
 /* target the active bullet */
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background-color: #9966ff;
-    opacity: 1;
+  background-color: #9966ff;
+  opacity: 1;
 }
 
 .zoom {
-    transition: transform .2s; /* Animation */
-  }
-  
-  .zoom:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+  transition: transform .2s;
+  /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 /*  VIDEO EXTERNO */
-  .embed-container { 
-    position: relative; 
-    padding-bottom: 56.25%;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-} 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
 
 .embed-container iframe,
 .embed-container object,
-.embed-container embed { 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
 /*--------------------------------------------------------------
 # Noticias
 --------------------------------------------------------------*/
+.embed-noticia iframe{
+  max-height: 523px;
+}
+.embed-noticia {
+  padding-bottom: 50%!important;
+}
 .noticias .icon-box {
-    text-align: center;
-    padding: 0px 0px 80px 0px;
-    transition: all ease-in-out 0.3s;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
-  }
-  
-  .noticias .icon-box .icon {
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: ease-in-out 0.3s;
-    position: relative;
-  }
-  .noticias img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .noticias .icon-box p {
-    padding: 20px 20px 0px 20px;
-  }
-  
-  .noticias .icon-box .icon svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .noticias .icon-box .icon svg path {
-    transition: 0.5s;
-    fill: #f5f5f5;
-  }
-  
-  .noticias .icon-box h4 {
-    font-weight: 600;
-    margin: 10px 0 15px 0;
-    font-size: 22px;
-  }
-  
-  .noticias .icon-box h4 a {
-    color: #222222;
-    transition: ease-in-out 0.3s;
-  }
-  
-  .noticias .icon-box p {
-    line-height: 24px;
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  
-  .noticias .icon-box:hover {
-    border-color: #fff;
-    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
-  }
+  text-align: center;
+  padding: 0px 0px 80px 0px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
+}
 
-  .pagination-cdlm .page-numbers{
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 7px 16px;
-    border-radius: 4px;
-    transition: 0.5s;
-    line-height: 1;
-    color: #fff;
-    animation-delay: 0.8s;
-    background: #9966ff;
-  }
-  .pagination-cdlm .current{
-    background: #9933ff;
-  }
-  
-  
-   .btn-get-started .page-numbers:hover {
-    background: #9933ff;
-    color: #fff;
-  }
+.noticias .icon-box .icon {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.noticias img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.noticias .icon-box p {
+  padding: 20px 20px 0px 20px;
+}
+
+.noticias .icon-box .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.noticias .icon-box .icon svg path {
+  transition: 0.5s;
+  fill: #f5f5f5;
+}
+
+.noticias .icon-box h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+.noticias .icon-box h4 a {
+  color: #222222;
+  transition: ease-in-out 0.3s;
+}
+
+.noticias .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.noticias .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+.pagination-cdlm .page-numbers {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 4px;
+  transition: 0.5s;
+  line-height: 1;
+  color: #fff;
+  animation-delay: 0.8s;
+  background: #9966ff;
+}
+
+.pagination-cdlm .current {
+  background: #9933ff;
+}
+
+
+.btn-get-started .page-numbers:hover {
+  background: #9933ff;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Nosotras
+--------------------------------------------------------------*/
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide iframe,.swiper-slide video{
+  width: 100%!important;
+  height: 200px;
+}
 /* MOBILE */
 @media screen and (max-width:1299px) {
-    .bannerContent img {
-        max-height: 18.75rem;
-        height: 18.75rem;
-    }
+  .bannerContent img {
+    max-height: 18.75rem;
+    height: 18.75rem;
+  }
 
-    .bannerContent .container {
-        bottom: 50%;
-        top: 0;
-        left: 0px;
-        right: 50px;
-    }
+  .bannerContent .container {
+    bottom: 50%;
+    top: 0;
+    left: 0px;
+    right: 50px;
+  }
 
-    .bannerContent h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
+  .bannerContent h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 
-    .generalContent img {
-        float: none;
-        width: 100%;
-    }
+  .generalContent img {
+    float: none;
+    width: 100%;
+  }
 
-    .generalContent p {
-        padding: 15px;
-    }
+  .generalContent p {
+    padding: 15px;
+  }
 
-    .imgModal img {
-        display: none;
-    }
+  .imgModal img {
+    display: none;
+  }
 }

@@ -29,9 +29,10 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>">Inicio</a></li>
-                <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#about">Nosotras</a></li>
-                <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/noticias">Noticias</a></li>
+                <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/nosotras/all/#nosotras">Nosotras</a></li>
+                <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/noticias#noticias">Noticias</a></li>
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#services">Servicios para la comunidad</a></li>
+                <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/cursos#cursos">Cursos y Talleres</a></li>
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#team">Directorio y Equipo</a></li>
                 <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#contact">Contactanos</a></li>
                 <li class="ps-3"><?php echo do_shortcode( '[weglot_switcher]' ); ?></li>

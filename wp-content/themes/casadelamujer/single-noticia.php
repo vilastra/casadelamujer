@@ -1,5 +1,7 @@
 <?php
-
+// require_once(ABSPATH . 'wp-admin/includes/media.php');
+// require_once(ABSPATH . 'wp-admin/includes/file.php');
+// require_once(ABSPATH . 'wp-admin/includes/image.php');
 get_header(); ?>
 
 
@@ -10,6 +12,14 @@ while (have_posts()) {
     $sub_titulo_noticia = get_field('sub_titulo_noticia');
     $imagen_banner_noticia = get_field('imagen_banner_noticia');
     $texto_cuerpo_noticia = get_field('texto_cuerpo_noticia');
+    $enlace_video_externo_noticia = get_field('enlace_video_externo_noticia');
+    $video_noticia = get_field('video_noticia');
+
+    // $url     = $imagen_banner_noticia;
+    // $post_id = get_the_ID();
+    // $image = media_sideload_image($url, $post_id, $titulo, 'id');
+
+    // set_post_thumbnail($post_id, $image);
 
 ?>
     <div class="bannerContent">
@@ -63,27 +73,35 @@ while (have_posts()) {
         <?php } ?>
 
 
-        <?php if (get_field('enlace_video_youtube_noticia') != "") { ?>
+        <?php if (have_rows('videos_noticia')) { ?>
             <div class="section-title">
-                <h2>Video</h2>
-
+                <h2>Videos</h2>
             </div>
-            <div class="generalContent embed-container mb-5">
-                <?php the_field('enlace_video_externo_noticia'); ?>
+            <div class="video-slider swiper mb-5">
+                <div class="swiper-wrapper align-items-center">
+                    <?php
+                    while (have_rows('videos_noticia')) {
+                        the_row();
+                    ?>
+                        <?php if (get_sub_field('video_interno_noticia') != "") { ?>
+                            <div class="swiper-slide mb-5"> <video style="background-color: #000;" width="100%" controls class="tm-mb-40">
+                                    <source src="<?php echo get_sub_field('video_interno_noticia') ?>" type="video/mp4">
+                                </video></div>
+                        <?php } else if (get_sub_field('video_externo_noticia') != "") { ?>
+                            <div class="swiper-slide mb-5"> <?php the_sub_field('video_externo_noticia'); ?></div>
+                        <?php } ?>
+                    <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         <?php } ?>
-        <?php if (get_field('video_noticia') != "") {
-            $video=  get_field('video_noticia');  ?>
-            <div class="section-title">
-                <h2>Video</h2>
-
-            </div>
-            <div class="generalContent mb-5">
-                <video style="background-color: #000;" width="100%" height="535" controls class="tm-mb-40">
-                    <source src="<?php echo $video ?>" type="video/mp4">
-                </video>
-            </div>
-        <?php } ?>
+        <div class="generalContent text-center mb-5">
+            <p class="text-center">Comparte esta noticia</p>
+            <?php echo do_shortcode('[addtoany]'); ?>
+        </div>
 
 
     </div>

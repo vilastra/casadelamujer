@@ -15,12 +15,13 @@ while (have_posts()) {
     $dia_inscripcion_curso_limite = get_field('dia_inscripcion_curso_limite');
     $hora_inscripcion_curso_limite = get_field('hora_inscripcion_curso_limite');
     $icono_del_curso = get_field('icono_del_curso');
+    $valor_del_curso = get_field('valor_del_curso');
 
 ?>
 
     <div class="container mt-5 mb-5 pt-5 ">
         <div class="section-title mt-5 pt-3">
-            <h2><?php echo   "<div class='pb-3'>".$icono_del_curso ."</div>".$titulo ?></h2>
+            <h2><?php echo   "<div class='pb-3'>" . $icono_del_curso . "</div>" . $titulo ?></h2>
         </div>
         <div class="generalContent mb-5">
             <?php echo $descripcion_del_curso; ?>
@@ -33,7 +34,9 @@ while (have_posts()) {
                 <?php if (get_field('fecha_comienzo_curso')) { ?>
                     <p> <b><i class="bi bi-calendar-check"></i> Fecha de comienzo: </b> <?php echo  $fecha_comienzo_curso ?></p>
                 <?php   } ?>
-
+                <?php if (get_field('fecha_comienzo_curso')) { ?>
+                    <p> <b><i class="bi bi-currency-dollar"></i> Valor: </b> <?php echo  $valor_del_curso ?></p>
+                <?php   } ?>
                 <?php
                 if (have_rows('inscripcion_del_curso')) {
                     while (have_rows('inscripcion_del_curso')) {
@@ -50,9 +53,11 @@ while (have_posts()) {
                         if (have_rows('fecha_inscripcion_curso_limite')) {
                             while (have_rows('fecha_inscripcion_curso_limite')) {
                                 the_row();
-                                $dia_inscripcion_curso_limite = get_sub_field('dia_inscripcion_curso_limite');
-                                $hora_inscripcion_curso_limite = get_sub_field('hora_inscripcion_curso_limite');
-                                echo '<p><b>Hasta el </b>' . $dia_inscripcion_curso_limite . " " . $hora_inscripcion_curso_limite;
+                                if (get_sub_field('dia_inscripcion_curso_limite')) {
+                                    $dia_inscripcion_curso_limite = get_sub_field('dia_inscripcion_curso_limite');
+                                    $hora_inscripcion_curso_limite = get_sub_field('hora_inscripcion_curso_limite');
+                                    echo '<p><b>Hasta el </b>' . $dia_inscripcion_curso_limite . " " . $hora_inscripcion_curso_limite;
+                                }
                             }
                         }
                     }
@@ -69,9 +74,9 @@ while (have_posts()) {
                     echo '<p>';
 
                     while (have_rows('requisitos_inscripcion_curso')) {
-                        the_row();                        
+                        the_row();
                         $item_requisito_curso = get_sub_field('item_requisito_curso');
-                        echo '<i class="bi bi-check2"></i> '.$item_requisito_curso;                        
+                        echo '<i class="bi bi-check2"></i> ' . $item_requisito_curso . '<br>';
                     }
                     echo '</p>';
                 }
@@ -82,7 +87,10 @@ while (have_posts()) {
         </div>
 
 
-
+        <div class="generalContent text-center mb-5">
+            <p class="text-center">Comparte este curso / taller</p>
+            <?php echo do_shortcode('[addtoany]'); ?>
+        </div>
     </div>
 
 <?php };

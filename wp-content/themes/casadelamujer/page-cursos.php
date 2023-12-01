@@ -4,12 +4,12 @@ get_header(); ?>
 
 <body>
     <main id="main">
-        <section id="services" class="services">
+        <section id="cursos" class="services">
             <div class="container">
 
                 <div class="section-title mt-5 pt-3">
                     <h2>Cursos y Talleres</h2>
-                    <p>Conoce los cursos y talleres disponibles</p>
+                    <p>Conoce los cursos y talleres disponibles en Casa de la Mujer Huamachuco</p>
                 </div>
                 <div class="row">
                     <!-- query -->
@@ -37,15 +37,17 @@ get_header(); ?>
                             $dia_inscripcion_curso_limite = get_field('dia_inscripcion_curso_limite');
                             $hora_inscripcion_curso_limite = get_field('hora_inscripcion_curso_limite');
                             $icono_del_curso = get_field('icono_del_curso');
+                            $valor_del_curso = get_field('valor_del_curso');
                         ?>
                             <div class="col-xl-3 col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mt-lg-0 mb-3" data-aos="zoom-in" data-aos-delay="200">
 
                                 <div class="icon-box w-100">
-                                    <div class="icon iconbox-purple">
+                                    <div class="icon <?php echo get_field('color_icono_curso'); ?>">
                                         <?php echo get_field('icono_del_curso'); ?>
                                     </div>
                                     <h4><?php echo  get_the_title($query->ID); ?></h4>
-                                    <p class="fst-italic"><?php echo get_the_date('d M Y'); ?></p>
+                                    <p class=""><?php echo "Inicio: ". $fecha_comienzo_curso ?></p>
+                                    <p class=""><?php echo "Valor: ". $valor_del_curso ?></p>
                                     
                                     <p class="pt-4"><a href="<?php echo get_permalink(); ?>">Ver más...</a></p>
                                 </div>

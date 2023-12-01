@@ -66,32 +66,60 @@
 
         <section id="featured-services" class="featured-services section-bg">
             <div class="container">
+                <?php
+                $mision_nosotras = "";
+                $vision_nosotras = "";
+                $objetivo_nosotras = "";
+                $sub_titulo_nosotras = "";
+                $primer_parrafo_nosotras = "";
+                $imagen_principal_nosotras = "";
+                $enlace_nosotras = "";
 
+                $args = array(
+                    'post_type' => 'Nosotras',
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+
+                );
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) {
+                    $i = 0;
+                    while ($query->have_posts()) :
+                        $query->the_post();
+                        $mision_nosotras = get_field('mision_nosotras');
+                        $vision_nosotras = get_field('vision_nosotras');
+                        $objetivo_nosotras = get_field('objetivo_nosotras');
+                        $sub_titulo_nosotras = get_field('sub_titulo_nosotras');
+                        $primer_parrafo_nosotras = get_field('primer_parrafo_nosotras');
+                        $imagen_principal_nosotras = get_field('imagen_principal_nosotras');
+                        $enlace_nosotras = get_permalink();
+                        break;
+                    endwhile;
+                    wp_reset_postdata();
+                } else {
+                } ?>
                 <div class="row no-gutters">
                     <div class="col-lg-4 col-md-6">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-house"></i></div>
-                            <h4 class="title"><a data-bs-toggle="modal" data-bs-target="#modalEnConstruccion" href="#">Nuestra misión</a></h4>
-                            <p class="description">Contribuir a la superación de la pobreza de las mujeres jefas de hogar y sus familias, así
-                                como también promover la defensa de los derechos de los niños, niñas y adolescentes,
-                                fortaleciendo la igualdad, equidad de género y derechos humanos.</p>
+                            <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestra misión</a></h4>
+                            <p class="description"><?php echo $mision_nosotras ?></p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-gender-female"></i></div>
-                            <h4 class="title"><a data-bs-toggle="modal" data-bs-target="#modalEnConstruccion" href="#">Nuestra visión</a></h4>
-                            <p class="description">En nuestra visión, vemos un futuro donde la superación de la pobreza, la mejora en las condiciones de vida, el acceso a servicios, el ejercicio de derechos y la generación de oportunidades laborales son una realidad para todas las mujeres y sus familias.</p>
+                            <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestra visión</a></h4>
+                            <p class="description"><?php echo $vision_nosotras ?></p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-flag"></i></div>
-                            <h4 class="title"><a data-bs-toggle="modal" data-bs-target="#modalEnConstruccion" href="#">Nuestro objetivo</a></h4>
-                            <p class="description">Organizar a las mujeres pobladoras en la búsqueda de soluciones frente a
-                                problemas e intereses comunes asociados a la superación de la pobreza,
-                                mejoramiento en sus condiciones de vida, acceso a servicios, ejercicio de derechos
-                                y generación de oportunidades laborales.
+                            <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestro objetivo</a></h4>
+                            <p class="description"><?php echo $objetivo_nosotras ?>
                             </p>
                         </div>
                     </div>
@@ -104,30 +132,19 @@
 
                 <div class="section-title">
                     <h2>Nosotras</h2>
-                    <p>El Centro de Formación, Capacitación y Servicios Comunitarios” Casa de la Mujer pobladora
-                        Huamachuco”, es una organización social sin fines de lucro, fundada el 7 de marzo de 1989.
-                        Este centro posee personalidad jurídica y presta servicios a las poblaciones Huamachuco 1,
-                        2 y 3 de la comuna de Renca y sus alrededores.</p>
+                    <p><?php echo $sub_titulo_nosotras ?></p>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6 order-1 order-lg-2">
-                        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/RENCA_Casa-de-la-Mujer-de-Huamachuco-1035x690-1-1035x687-1.jpg" class="img-fluid" alt="">
+                        <img src="<?php echo $imagen_principal_nosotras ?>" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                         <p class="">
-                            Los orígenes de esta organización ocurrieron en un contexto nacional de crisis económica,
-                            política y social a partir del golpe militar impuesto en Chile en 1973.
-                            Como consecuencia de ello, fueron las mujeres pobladoras quienes conformaron
-                            agrupaciones y organizaciones de subsistencia y de lucha por los derechos humanos,
-                            bajo el alero de la iglesia. Si bien, en esta
-                            etapa de emergencia y crisis, la recuperación democrática parecía estar muy distante de la
-                            preocupación cotidiana de las mujeres, son estas las que se organizan en torno a las ollas
-                            comunes, talleres productivos y otras formas solidarias de autoayuda, como una búsqueda
-                            colectiva de las mujeres pobladoras por salir de esta situación de exclusión.
+                            <?php echo $primer_parrafo_nosotras ?>
                         </p>
                         <div class="text-center pt-3">
-                            <a class="btn-get-started animate__animated animate__fadeInUp scrollto" data-bs-toggle="modal" data-bs-target="#modalEnConstruccion" href="#">Conoce nuestra historia</a>
+                            <a class="btn-get-started animate__animated animate__fadeInUp scrollto" href="<?php echo $enlace_nosotras ?>">Conoce nuestra historia</a>
                         </div>
                     </div>
 
@@ -168,7 +185,8 @@
 
                                     <h4><?php echo  get_the_title($query->ID); ?></h4>
                                     <p class="fst-italic"><?php echo get_the_date('d M Y'); ?></p>
-                                    <p><?php $out = strlen($subTitulo) > 101 ? substr($subTitulo,0,101)."..." : $subTitulo; echo $out ; ?></p>
+                                    <p><?php $out = strlen($subTitulo) > 101 ? substr($subTitulo, 0, 101) . "..." : $subTitulo;
+                                        echo $out; ?></p>
                                     <p class="pt-4"><a href="<?php echo get_permalink(); ?>">Ver más...</a></p>
                                 </div>
 
@@ -363,23 +381,27 @@
 
                     <div class="col-lg-5 d-flex align-items-stretch">
                         <div class="info">
-                            <div class="address">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Dirección:</h4>
-                                <p>Villarrica 2553, Huamachuco 2, Renca</p>
-                            </div>
-
-                            <div class="email">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Correo:</h4>
-                                <p>info@casadelamujer.cl</p>
-                            </div>
-
-                            <div class="phone">
-                                <i class="bi bi-phone"></i>
-                                <h4>Teléfono:</h4>
-                                <p>+56 9 4598 3265</p>
-                            </div>
+                            <a target="_blank" href="https://www.google.com/maps?ll=-33.389928,-70.697021&z=17&t=m&hl=es-419&gl=CL&mapclient=embed&q=Villarrica+2553+Renca+Regi%C3%B3n+Metropolitana">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>Dirección:</h4>
+                                    <p>Villarrica 2553, Huamachuco 2, Renca</p>
+                                </div>
+                            </a>
+                            <a href="mailto:info@casadelamujer.cl">
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Correo:</h4>
+                                    <p>info@casadelamujer.cl</p>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/+56945983265" target="_blank">
+                                <div class="phone">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <h4>Teléfono:</h4>
+                                    <p>+56 9 4598 3265</p>
+                                </div>
+                            </a>
 
 
                         </div>
