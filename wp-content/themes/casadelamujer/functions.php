@@ -269,7 +269,7 @@ $args = array(
     'create_posts' => false, // Removes support for the "Add New" function ( use 'do_not_allow' instead of false for multisite set ups )
   ),
   'map_meta_cap' => true, // Set to `false`, if users are not allowed to edit/delete existing posts
-  'supports' => array('title'),
+  'supports' => array('title', 'thumbnail'),
   'menu_position' => 4,
   'menu_icon' => 'dashicons-groups'
 );

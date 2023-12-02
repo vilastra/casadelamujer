@@ -1,9 +1,10 @@
 <?php
-// require_once(ABSPATH . 'wp-admin/includes/media.php');
-// require_once(ABSPATH . 'wp-admin/includes/file.php');
-// require_once(ABSPATH . 'wp-admin/includes/image.php');
-get_header(); ?>
-
+get_header();
+require_once(ABSPATH . 'wp-admin/includes/media.php');
+require_once(ABSPATH . 'wp-admin/includes/file.php');
+require_once(ABSPATH . 'wp-admin/includes/image.php');
+ ?>
+	
 
 <?php
 while (have_posts()) {
@@ -15,11 +16,11 @@ while (have_posts()) {
     $enlace_video_externo_noticia = get_field('enlace_video_externo_noticia');
     $video_noticia = get_field('video_noticia');
 
-    // $url     = $imagen_banner_noticia;
-    // $post_id = get_the_ID();
-    // $image = media_sideload_image($url, $post_id, $titulo, 'id');
+    $url     = $imagen_banner_noticia;
+    $post_id = get_the_ID();
+    $image = media_sideload_image($url, $post_id, $titulo, 'id');
 
-    // set_post_thumbnail($post_id, $image);
+    set_post_thumbnail($post_id, $image);
 
 ?>
     <div class="bannerContent">
