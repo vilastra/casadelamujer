@@ -14,11 +14,7 @@ while (have_posts()) {
     $imagen_principal_nosotras = get_field('imagen_principal_nosotras');
     $texto_cuerpo_noticia = get_field('texto_cuerpo_noticia');
 
-    $url     = $imagen_principal_nosotras;
-    $post_id = get_the_ID();
-    $image = media_sideload_image($url, $post_id, $titulo, 'id');
-
-    set_post_thumbnail($post_id, $image);
+    
 
 ?>
     <div class="bannerContent" id="nosotras" class="nosotras">

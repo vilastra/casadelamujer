@@ -1,36 +1,36 @@
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	// The require scope
 /******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
+/******/ 		__webpack_require__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
@@ -39,11 +39,13 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "privateApis": function() { return /* reexport */ privateApis; }
+  privateApis: () => (/* reexport */ privateApis)
 });
 
+;// CONCATENATED MODULE: external "React"
+const external_React_namespaceObject = window["React"];
 ;// CONCATENATED MODULE: external ["wp","element"]
-var external_wp_element_namespaceObject = window["wp"]["element"];
+const external_wp_element_namespaceObject = window["wp"]["element"];
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 function extends_extends() {
   extends_extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -62,32 +64,32 @@ function extends_extends() {
 ;// CONCATENATED MODULE: ./node_modules/history/index.js
 
 
-/**
- * Actions represent the type of change to a location value.
- *
- * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#action
+/**
+ * Actions represent the type of change to a location value.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#action
  */
 var Action;
 
 (function (Action) {
-  /**
-   * A POP indicates a change to an arbitrary index in the history stack, such
-   * as a back or forward navigation. It does not describe the direction of the
-   * navigation, only that the current index changed.
-   *
-   * Note: This is the default action for newly created history objects.
+  /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
    */
   Action["Pop"] = "POP";
-  /**
-   * A PUSH indicates a new entry being added to the history stack, such as when
-   * a link is clicked and a new page loads. When this happens, all subsequent
-   * entries in the stack are lost.
+  /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
    */
 
   Action["Push"] = "PUSH";
-  /**
-   * A REPLACE indicates the entry at the current index in the history stack
-   * being replaced by a new one.
+  /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
    */
 
   Action["Replace"] = "REPLACE";
@@ -116,12 +118,12 @@ function warning(cond, message) {
 var BeforeUnloadEventType = 'beforeunload';
 var HashChangeEventType = 'hashchange';
 var PopStateEventType = 'popstate';
-/**
- * Browser history stores the location in regular URLs. This is the standard for
- * most web apps, but it requires some configuration on the server to ensure you
- * serve the same app at multiple URLs.
- *
- * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
  */
 
 function createBrowserHistory(options) {
@@ -346,13 +348,13 @@ function createBrowserHistory(options) {
   };
   return history;
 }
-/**
- * Hash history stores the location in window.location.hash. This makes it ideal
- * for situations where you don't want to send the location to the server for
- * some reason, either because you do cannot configure it or the URL space is
- * reserved for something else.
- *
- * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
+/**
+ * Hash history stores the location in window.location.hash. This makes it ideal
+ * for situations where you don't want to send the location to the server for
+ * some reason, either because you do cannot configure it or the URL space is
+ * reserved for something else.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
  */
 
 function createHashHistory(options) {
@@ -608,11 +610,11 @@ function createHashHistory(options) {
   };
   return history;
 }
-/**
- * Memory history stores the current location in memory. It is designed for use
- * in stateful non-browser environments like tests and React Native.
- *
- * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#creatememoryhistory
+/**
+ * Memory history stores the current location in memory. It is designed for use
+ * in stateful non-browser environments like tests and React Native.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#creatememoryhistory
  */
 
 function createMemoryHistory(options) {
@@ -797,10 +799,10 @@ function createEvents() {
 function createKey() {
   return Math.random().toString(36).substr(2, 8);
 }
-/**
- * Creates a string URL path from the given pathname, search, and hash components.
- *
- * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createpath
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createpath
  */
 
 
@@ -815,10 +817,10 @@ function createPath(_ref) {
   if (hash && hash !== '#') pathname += hash.charAt(0) === '#' ? hash : '#' + hash;
   return pathname;
 }
-/**
- * Parses a string URL path into its separate pathname, search, and hash components.
- *
- * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#parsepath
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#parsepath
  */
 
 function parsePath(path) {
@@ -850,50 +852,46 @@ function parsePath(path) {
 
 
 ;// CONCATENATED MODULE: external ["wp","url"]
-var external_wp_url_namespaceObject = window["wp"]["url"];
+const external_wp_url_namespaceObject = window["wp"]["url"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/history.js
 /**
  * External dependencies
  */
 
+
 /**
  * WordPress dependencies
  */
 
-
 const history_history = createBrowserHistory();
 const originalHistoryPush = history_history.push;
 const originalHistoryReplace = history_history.replace;
-
 function push(params, state) {
   const currentArgs = (0,external_wp_url_namespaceObject.getQueryArgs)(window.location.href);
   const currentUrlWithoutArgs = (0,external_wp_url_namespaceObject.removeQueryArgs)(window.location.href, ...Object.keys(currentArgs));
   const newUrl = (0,external_wp_url_namespaceObject.addQueryArgs)(currentUrlWithoutArgs, params);
   return originalHistoryPush.call(history_history, newUrl, state);
 }
-
 function replace(params, state) {
   const currentArgs = (0,external_wp_url_namespaceObject.getQueryArgs)(window.location.href);
   const currentUrlWithoutArgs = (0,external_wp_url_namespaceObject.removeQueryArgs)(window.location.href, ...Object.keys(currentArgs));
   const newUrl = (0,external_wp_url_namespaceObject.addQueryArgs)(currentUrlWithoutArgs, params);
   return originalHistoryReplace.call(history_history, newUrl, state);
 }
-
 history_history.push = push;
 history_history.replace = replace;
-/* harmony default export */ var build_module_history = (history_history);
+/* harmony default export */ const build_module_history = (history_history);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/router.js
-
 
 /**
  * WordPress dependencies
  */
 
+
 /**
  * Internal dependencies
  */
-
 
 const RoutesContext = (0,external_wp_element_namespaceObject.createContext)();
 const HistoryContext = (0,external_wp_element_namespaceObject.createContext)();
@@ -903,14 +901,13 @@ function useLocation() {
 function useHistory() {
   return (0,external_wp_element_namespaceObject.useContext)(HistoryContext);
 }
-
 function getLocationWithParams(location) {
   const searchParams = new URLSearchParams(location.search);
-  return { ...location,
+  return {
+    ...location,
     params: Object.fromEntries(searchParams.entries())
   };
 }
-
 function RouterProvider({
   children
 }) {
@@ -922,15 +919,15 @@ function RouterProvider({
       setLocation(getLocationWithParams(updatedLocation));
     });
   }, []);
-  return (0,external_wp_element_namespaceObject.createElement)(HistoryContext.Provider, {
+  return (0,external_React_namespaceObject.createElement)(HistoryContext.Provider, {
     value: build_module_history
-  }, (0,external_wp_element_namespaceObject.createElement)(RoutesContext.Provider, {
+  }, (0,external_React_namespaceObject.createElement)(RoutesContext.Provider, {
     value: location
   }, children));
 }
 
 ;// CONCATENATED MODULE: external ["wp","privateApis"]
-var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
+const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/lock-unlock.js
 /**
  * WordPress dependencies
@@ -939,7 +936,7 @@ var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my plugin or theme will inevitably break on the next WordPress release.', '@wordpress/router');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my theme or plugin will inevitably break in the next version of WordPress.', '@wordpress/router');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/private-apis.js
 /**

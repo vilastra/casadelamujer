@@ -105,6 +105,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-house"></i></div>
                             <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestra misión</a></h4>
+                            <?php $mision_nosotras = strlen($mision_nosotras) > 256 ? substr($mision_nosotras,0,256)."..." : $mision_nosotras; ?>
                             <p class="description"><?php echo $mision_nosotras ?></p>
                         </div>
                     </div>
@@ -112,6 +113,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-gender-female"></i></div>
                             <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestra visión</a></h4>
+                            <?php $vision_nosotras = strlen($vision_nosotras) > 256 ? substr($vision_nosotras,0,256)."..." : $vision_nosotras; ?>
                             <p class="description"><?php echo $vision_nosotras ?></p>
                         </div>
                     </div>
@@ -119,7 +121,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-flag"></i></div>
                             <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestro objetivo</a></h4>
-                            <p class="description"><?php echo $objetivo_nosotras ?>
+                            <?php $objetivo_nosotras = strlen($objetivo_nosotras) > 256 ? substr($objetivo_nosotras,0,256)."..." : $objetivo_nosotras; ?>
+                            <p class="description"><?php echo  $objetivo_nosotras ?>
                             </p>
                         </div>
                     </div>
@@ -319,7 +322,7 @@
                         </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" data-bs-toggle="modal" data-bs-target="#modalEnConstruccion" href="#">Pronto disponible</a>
+                        <a class="cta-btn align-middle" target="_blank" href="https://app.payku.cl/botonpago/index?idboton=25849&verif=a91e07d0">Dona</a>
                     </div>
                 </div>
 
@@ -367,7 +370,10 @@
                 </div>
 
             </div>
-        </section><!-- End Team Section -->
+        </section>
+        
+        
+        <!-- End Team Section -->
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
