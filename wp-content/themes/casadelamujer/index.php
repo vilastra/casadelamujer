@@ -76,7 +76,7 @@
                 $enlace_nosotras = "";
 
                 $args = array(
-                    'post_type' => 'Nosotras',
+                    'post_type' => 'quienessomos',
                     'posts_per_page' => -1,
                     'orderby' => 'menu_order',
                     'order' => 'ASC'
@@ -134,7 +134,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Nosotras</h2>
+                    <h2>Quienes somos</h2>
                     <p><?php echo $sub_titulo_nosotras ?></p>
                 </div>
 
@@ -328,100 +328,13 @@
 
             </div>
         </section>
-        <section id="team" class="team section-bg">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Directorio y Equipo</h2>
-                    <p>La Organización está conformada por un directorio compuesto por Presidenta, Secretaria, Tesorera y 2 suplentes, el cual se renueva cada 4 años, donde participan más de 100 socias de la comunidad, inscritas en el Libro de Registro de Socias.</p>
-                </div>
-
-                <div class="row">
-                    <?php
-                    $args = array(
-                        'post_type' => 'Directorio',
-                        'posts_per_page' => -1,
-                        'orderby' => 'menu_order',
-                        'order' => 'ASC'
-                    );
-                    $query = new WP_Query($args);
-
-                    if ($query->have_posts()) {
-                        $i = 0;
-                        while ($query->have_posts()) :
-                            $query->the_post();
-                            $titulo = get_the_title($query->ID);
-                            echo get_field('descripcion_corta_servicios');
-                    ?>
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                                <div class="member">
-                                    <img src="<?php echo get_field('foto_directorio'); ?>" alt="">
-                                    <h4><?php echo get_the_title($query->ID); ?> </h4>
-                                    <span><?php echo get_field('cargo_directorio'); ?></span>
-                                </div>
-                            </div>
-                    <?php
-                            $i++;
-                        endwhile;
-                        wp_reset_postdata();
-                    } else {
-                    }
-                    ?>
-                </div>
-
-            </div>
-        </section>
+        
         
         
         <!-- End Team Section -->
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Contactanos</h2>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-5 d-flex align-items-stretch">
-                        <div class="info">
-                            <a target="_blank" href="https://www.google.com/maps?ll=-33.389928,-70.697021&z=17&t=m&hl=es-419&gl=CL&mapclient=embed&q=Villarrica+2553+Renca+Regi%C3%B3n+Metropolitana">
-                                <div class="address">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h4>Dirección:</h4>
-                                    <p>Villarrica 2553, Huamachuco 2, Renca</p>
-                                </div>
-                            </a>
-                            <a href="mailto:info@casadelamujer.cl">
-                                <div class="email">
-                                    <i class="bi bi-envelope"></i>
-                                    <h4>Correo:</h4>
-                                    <p>info@casadelamujer.cl</p>
-                                </div>
-                            </a>
-                            <a href="https://wa.me/+56945983265" target="_blank">
-                                <div class="phone">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <h4>Teléfono:</h4>
-                                    <p>+56 9 4598 3265</p>
-                                </div>
-                            </a>
-
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1867.6769868832866!2d-70.6997520662292!3d-33.38992505894815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c6bf6cc680a7%3A0xaa77aac085316630!2sVillarrica%202553%2C%20Renca%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1697940388212!5m2!1ses-419!2scl" frameborder="0" style="border:0; width: 100%; height: 490px;" allowfullscreen></iframe>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
+        
 
     </main>
 

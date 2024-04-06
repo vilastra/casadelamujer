@@ -139,9 +139,9 @@ $args = array(
 register_post_type('Servicios', $args);
 
 $labels = array(
-  'name'                => _x('Directorio', 'Post Type General Name', 'casadelamujer'),
-  'singular_name'       => _x('Directorio', 'Post Type Singular Name', 'casadelamujer'),
-  'menu_name'           => __('Directorio', 'casadelamujer'),
+  'name'                => _x('Directorio y Equipo', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Directorio y Equipo', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Directorio y Equipo', 'casadelamujer'),
   'parent_item_colon'   => __('Parent', 'casadelamujer'),
   'all_items'           => __('Todas las personas', 'casadelamujer'),
   'view_item'           => __('Ver persona', 'casadelamujer'),
@@ -155,13 +155,13 @@ $labels = array(
 );
 $args = array(
   'public' => true,
-  'label' => 'Directorio',
+  'label' => 'Directorio y Equipo',
   'labels' => $labels,
   'supports' => array('title'),
   'menu_position' => 4,
   'menu_icon' => 'dashicons-businesswoman'
 );
-register_post_type('Directorio', $args);
+register_post_type('directorio-y-equipo', $args);
 
 $labels = array(
   'name'                => _x('Redes colaborativas', 'Post Type General Name', 'casadelamujer'),
@@ -247,23 +247,23 @@ add_theme_support('post-thumbnails');
 add_post_type_support('CursosTalleres', 'thumbnail');
 register_post_type('CursosTalleres', $args);
 $labels = array(
-  'name'                => _x('Nosotras', 'Post Type General Name', 'casadelamujer'),
-  'singular_name'       => _x('Nosotras', 'Post Type Singular Name', 'casadelamujer'),
-  'menu_name'           => __('Nosotras', 'casadelamujer'),
+  'name'                => _x('Quienes Somos', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Quienes Somos', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Quienes Somos', 'casadelamujer'),
   'parent_item_colon'   => __('Parent', 'casadelamujer'),
-  'all_items'           => __('Nosotras', 'casadelamujer'),
-  'view_item'           => __('Ver Nosotras', 'casadelamujer'),
-  'add_new_item'        => __('Agregar nuevo Nosotras', 'casadelamujer'),
-  'add_new'             => __('Agregar nueva Nosotras', 'casadelamujer'),
-  'edit_item'           => __('Editar Nosotras', 'casadelamujer'),
-  'update_item'         => __('Actualizar Nosotras', 'casadelamujer'),
-  'search_items'        => __('Buscar Nosotras', 'casadelamujer'),
-  'not_found'           => __('Nosotras no encontrado', 'casadelamujer'),
-  'not_found_in_trash'  => __('Nosotras no encontrado', 'casadelamujer'),
+  'all_items'           => __('Quienes Somos', 'casadelamujer'),
+  'view_item'           => __('Ver Quienes Somos', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nuevo Quienes Somos', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva Quienes Somos', 'casadelamujer'),
+  'edit_item'           => __('Editar Quienes Somos', 'casadelamujer'),
+  'update_item'         => __('Actualizar Quienes Somos', 'casadelamujer'),
+  'search_items'        => __('Buscar Quienes Somos', 'casadelamujer'),
+  'not_found'           => __('Quienes Somos no encontrado', 'casadelamujer'),
+  'not_found_in_trash'  => __('Quienes Somos no encontrado', 'casadelamujer'),
 );
 $args = array(
   'public' => true,
-  'label' => 'Nosotras',
+  'label' => 'Quienes Somos',
   'labels' => $labels,
   'capabilities' => array(
     'create_posts' => false, // Removes support for the "Add New" function ( use 'do_not_allow' instead of false for multisite set ups )
@@ -273,13 +273,13 @@ $args = array(
   'menu_position' => 4,
   'menu_icon' => 'dashicons-groups'
 );
-register_post_type('Nosotras', $args);
+register_post_type('quienessomos', $args);
 
 
 
 // ======== ACCIONES PARA EVITAR ELIMINAR UN CONTENIDO ========
 global $noborrar;
-$noborrar = array("nosotras");
+$noborrar = array("quienessomos");
 add_filter('post_row_actions', 'remove_row_actions_post_delete', 10, 2);
 function remove_row_actions_post_delete($actions, $post)
 {
