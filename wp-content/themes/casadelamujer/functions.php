@@ -246,6 +246,8 @@ $args = array(
 add_theme_support('post-thumbnails');
 add_post_type_support('CursosTalleres', 'thumbnail');
 register_post_type('CursosTalleres', $args);
+
+
 $labels = array(
   'name'                => _x('Quienes Somos', 'Post Type General Name', 'casadelamujer'),
   'singular_name'       => _x('Quienes Somos', 'Post Type Singular Name', 'casadelamujer'),
@@ -274,6 +276,36 @@ $args = array(
   'menu_icon' => 'dashicons-groups'
 );
 register_post_type('quienessomos', $args);
+
+
+$labels = array(
+  'name'                => _x('Donde estamos', 'Post Type General Name', 'casadelamujer'),
+  'singular_name'       => _x('Donde estamos', 'Post Type Singular Name', 'casadelamujer'),
+  'menu_name'           => __('Donde estamos', 'casadelamujer'),
+  'parent_item_colon'   => __('Parent', 'casadelamujer'),
+  'all_items'           => __('Donde estamos', 'casadelamujer'),
+  'view_item'           => __('Ver Donde estamos', 'casadelamujer'),
+  'add_new_item'        => __('Agregar nuevo Donde estamos', 'casadelamujer'),
+  'add_new'             => __('Agregar nueva Donde estamos', 'casadelamujer'),
+  'edit_item'           => __('Editar Donde estamos', 'casadelamujer'),
+  'update_item'         => __('Actualizar Donde estamos', 'casadelamujer'),
+  'search_items'        => __('Buscar Donde estamos', 'casadelamujer'),
+  'not_found'           => __('Donde estamos no encontrado', 'casadelamujer'),
+  'not_found_in_trash'  => __('Donde estamos no encontrado', 'casadelamujer'),
+);
+$args = array(
+  'public' => true,
+  'label' => 'Donde estamos',
+  'labels' => $labels,
+  'capabilities' => array(
+    'create_posts' => true, // Removes support for the "Add New" function ( use 'do_not_allow' instead of false for multisite set ups )
+  ),
+  'map_meta_cap' => true, // Set to `false`, if users are not allowed to edit/delete existing posts
+  'supports' => array('title', 'thumbnail'),
+  'menu_position' => 4,
+  'menu_icon' => 'dashicons-location-alt'
+);
+register_post_type('dondeestamos', $args);
 
 
 

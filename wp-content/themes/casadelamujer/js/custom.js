@@ -81,4 +81,15 @@ jQuery(document).ready(function ($) {
             }
         }
     });
+
+    var portfolioIsotope = $('.equipo-container').isotope({
+        itemSelector: '.equipo-item',
+        layoutMode: 'fitRows'
+    });
+    $('#equipo-flters li').on('click', function () {
+        $("#equipo-flters li").removeClass('active');
+        $(this).addClass('active');
+
+        portfolioIsotope.isotope({filter: $(this).data('filter')});
+    });
 })

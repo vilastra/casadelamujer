@@ -331,9 +331,6 @@
         
         
         
-        <!-- End Team Section -->
-
-        <!-- ======= Contact Section ======= -->
         
 
     </main>

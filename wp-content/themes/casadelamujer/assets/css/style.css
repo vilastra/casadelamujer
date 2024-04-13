@@ -512,7 +512,10 @@ h6 {
   animation-delay: 0.8s;
   background: #9966ff;
 }
-
+.btn.active{
+  border-color: #9966ff!important;
+  color: #9966ff!important;
+}
  .btn-get-started:hover {
   background: #9933ff;
   color: #fff;

@@ -26,7 +26,7 @@
                 <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/cursos#cursos">Cursos y Talleres</a></li>
                 
                 
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>#contact">Dónde estamos?</a></li>
+                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/dondeestamos/all">Dónde estamos?</a></li>
                 <li class="ps-3"><?php echo do_shortcode('[weglot_switcher]'); ?></li>
                 <li class="ps-3"><a class="btnHeaderDonar" target="_blank" href="https://app.payku.cl/botonpago/index?idboton=25849&verif=a91e07d0">Dona</a></li>
             </ul>

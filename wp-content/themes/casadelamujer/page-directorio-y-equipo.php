@@ -3,6 +3,9 @@ get_header();
 require_once(ABSPATH . 'wp-admin/includes/media.php');
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+
+$imagen_principal_nosotras = get_home_url() . "/wp-content/uploads/2023/11/IMG_20230127_213552-scaled-e1713032766293.jpg";
 ?>
 
 
@@ -12,7 +15,7 @@ require_once(ABSPATH . 'wp-admin/includes/image.php');
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>" style="object-position: bottom; background-image: url(<?php echo $imagen_principal_nosotras ?>)">
+            <div class="carousel-item active" style="object-position: bottom; background-image: url(<?php echo $imagen_principal_nosotras ?>)">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">Directorio y Equipo</h2>
@@ -36,8 +39,17 @@ require_once(ABSPATH . 'wp-admin/includes/image.php');
             <!-- <h2>Directorio y Equipo</h2> -->
             <p>La Organización está conformada por un directorio compuesto por Presidenta, Secretaria, Tesorera y 2 suplentes, el cual se renueva cada 4 años, donde participan más de 100 socias de la comunidad, inscritas en el Libro de Registro de Socias.</p>
         </div>
-
         <div class="row">
+            <div class="col-12 text-center mb-2">
+                <ul class="list-inline mb-4" id="equipo-flters">
+                    <li class="btn  m-1 active btn-get-started animate__animated animate__fadeInUp" data-filter="*">Ver todo</li>
+                    <li class="btn  m-1 btn-get-started animate__animated animate__fadeInUp" data-filter=".directorio">Directorio</li>
+                    <li class="btn  m-1 btn-get-started animate__animated animate__fadeInUp" data-filter=".equipo">Equipo</li>
+                    <li class="btn  m-1 btn-get-started animate__animated animate__fadeInUp" data-filter=".voluntarias">Voluntarias</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row equipo-container">
             <?php
             $args = array(
                 'post_type' => 'directorio-y-equipo',
@@ -54,14 +66,13 @@ require_once(ABSPATH . 'wp-admin/includes/image.php');
                     $titulo = get_the_title($query->ID);
             ?>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <a style="text-decoration: none;color: unset;"  href="<?php echo get_permalink(); ?>">
+                    <div class="equipo-item col-lg-4 col-md-6  align-items-stretch <?php echo get_field('area_directorio'); ?>">
+                       
                             <div class="member">
                                 <img src="<?php echo get_field('foto_directorio'); ?>" alt="">
                                 <h4><?php echo get_the_title($query->ID); ?> </h4>
                                 <span><?php echo get_field('cargo_directorio'); ?></span>
                             </div>
-                        </a>
                     </div>
 
             <?php
