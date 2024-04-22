@@ -105,7 +105,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-house"></i></div>
                             <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestra misión</a></h4>
-                            <?php $mision_nosotras = strlen($mision_nosotras) > 256 ? substr($mision_nosotras,0,256)."..." : $mision_nosotras; ?>
+                            <?php $mision_nosotras = strlen($mision_nosotras) > 256 ? substr($mision_nosotras, 0, 256) . "..." : $mision_nosotras; ?>
                             <p class="description"><?php echo $mision_nosotras ?></p>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-gender-female"></i></div>
                             <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestra visión</a></h4>
-                            <?php $vision_nosotras = strlen($vision_nosotras) > 256 ? substr($vision_nosotras,0,256)."..." : $vision_nosotras; ?>
+                            <?php $vision_nosotras = strlen($vision_nosotras) > 256 ? substr($vision_nosotras, 0, 256) . "..." : $vision_nosotras; ?>
                             <p class="description"><?php echo $vision_nosotras ?></p>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-flag"></i></div>
                             <h4 class="title"><a href="<?php echo $enlace_nosotras ?>">Nuestro objetivo</a></h4>
-                            <?php $objetivo_nosotras = strlen($objetivo_nosotras) > 256 ? substr($objetivo_nosotras,0,256)."..." : $objetivo_nosotras; ?>
+                            <?php $objetivo_nosotras = strlen($objetivo_nosotras) > 256 ? substr($objetivo_nosotras, 0, 256) . "..." : $objetivo_nosotras; ?>
                             <p class="description"><?php echo  $objetivo_nosotras ?>
                             </p>
                         </div>
@@ -252,7 +252,7 @@
 
             </div>
         </section>
-        <section id="services" class="services">
+        <section id="services" class="noticias">
             <div class="container">
 
                 <div class="section-title">
@@ -264,7 +264,7 @@
                     <?php
                     $args = array(
                         'post_type' => 'Servicios',
-                        'posts_per_page' => -1,
+                        'posts_per_page' => 4,
                         'orderby' => 'menu_order',
                         'order' => 'ASC'
 
@@ -279,16 +279,16 @@
                     ?>
                             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
 
-                                <div class="icon-box <?php echo get_field('color_icono_servicio'); ?>">
-                                    <div class="icon">
-                                        <?php echo get_field('icono_servicio'); ?>
-                                    </div>
+                                <div class="icon-box">
+                                    <img  class="w-100" src="<?php echo get_field('imagen_servicio'); ?>" alt="">
+
                                     <h4><?php echo  get_the_title($query->ID); ?></h4>
                                     <p><?php echo get_field('descripcion_corta_servicios'); ?></p>
                                     <p class="pt-4"><a href="<?php echo get_permalink(); ?>">Conoce más...</a></p>
                                 </div>
 
                             </div>
+                           
                     <?php
                             $i++;
                         endwhile;
@@ -301,7 +301,9 @@
 
 
                 </div>
-
+                <div class="text-center pt-5">
+                    <a class="btn-get-started animate__animated animate__fadeInUp scrollto" href="<?php echo get_site_url(); ?>/servicios">Ve todos los servicios</a>
+                </div>
             </div>
         </section>
         <section id="cta" class="cta">
@@ -328,10 +330,10 @@
 
             </div>
         </section>
-        
-        
-        
-        
+
+
+
+
 
     </main>
 
