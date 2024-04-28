@@ -134,7 +134,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Quienes somos</h2>
+                    <h2>Quiénes somos</h2>
                     <p><?php echo $sub_titulo_nosotras ?></p>
                 </div>
 
@@ -182,17 +182,14 @@
                             $subTitulo = get_field("sub_titulo_noticia");
                     ?>
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-
                                 <div class="icon-box">
                                     <img src="<?php echo get_field('imagen_banner_noticia'); ?>" alt="">
-
                                     <h4><?php echo  get_the_title($query->ID); ?></h4>
                                     <p class="fst-italic"><?php echo get_the_date('d M Y'); ?></p>
                                     <p><?php $out = strlen($subTitulo) > 101 ? substr($subTitulo, 0, 101) . "..." : $subTitulo;
                                         echo $out; ?></p>
                                     <p class="pt-4"><a href="<?php echo get_permalink(); ?>">Ver más...</a></p>
                                 </div>
-
                             </div>
                     <?php
                             $i++;
@@ -256,7 +253,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Servicios que la CASA DE LA MUJER DE HUAMACHUCO entrega a la comunidad</h2>
+                    <h2>Servicios a la comunidad</h2>
                     <p>La Casa de la Mujer de Huamachuco, entrega diversos servicios a la comunidad, los cuales se llevan a cabo dependiendo de los recursos recaudados para su realización, estos se obtienen a través de donaciones y/o proyectos</p>
                 </div>
 

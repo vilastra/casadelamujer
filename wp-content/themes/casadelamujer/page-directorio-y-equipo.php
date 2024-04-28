@@ -13,7 +13,6 @@ $imagen_principal_nosotras = get_home_url() . "/wp-content/uploads/2023/11/IMG_2
 
 <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active" style="object-position: bottom; background-image: url(<?php echo $imagen_principal_nosotras ?>)">
                 <div class="carousel-container">
@@ -23,12 +22,6 @@ $imagen_principal_nosotras = get_home_url() . "/wp-content/uploads/2023/11/IMG_2
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
     </div>
 </section>
 

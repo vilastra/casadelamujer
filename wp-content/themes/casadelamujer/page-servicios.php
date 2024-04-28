@@ -5,7 +5,7 @@ require_once(ABSPATH . 'wp-admin/includes/file.php');
 require_once(ABSPATH . 'wp-admin/includes/image.php');
 
 
-$imagen_principal_nosotras = get_home_url() . "/wp-content/uploads/2023/11/IMG_20230127_213552-scaled-e1713032766293.jpg";
+$imagen_principal_nosotras = get_home_url() . "/wp-content/uploads/2023/11/img1-e1699819391374.jpg";
 ?>
 
 

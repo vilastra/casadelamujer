@@ -23,7 +23,7 @@ while (have_posts()) {
                 <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>" style="object-position: bottom; background-image: url(<?php echo $banner_donde_estamos ?>)">
                     <div class="carousel-container">
                         <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">Donde estamos?</h2>
+                            <h2 class="animate__animated animate__fadeInDown">¿Dónde estamos?</h2>
                         </div>
                     </div>
                 </div>

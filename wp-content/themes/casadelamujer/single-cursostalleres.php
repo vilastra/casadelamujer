@@ -16,12 +16,26 @@ while (have_posts()) {
     $hora_inscripcion_curso_limite = get_field('hora_inscripcion_curso_limite');
     $icono_del_curso = get_field('icono_del_curso');
     $valor_del_curso = get_field('valor_del_curso');
+    $banner_curso = get_field('banner_curso');
 
 ?>
+    <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>" style="object-position: bottom; background-image: url(<?php echo $banner_curso ?>)">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h2 class="animate__animated animate__fadeInDown"><?php echo   "<div class='pb-3'>" . $icono_del_curso . "</div>" . $titulo ?></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container  mb-5  ">
 
-    <div class="container mt-5 mb-5 pt-5 ">
         <div class="section-title mt-5 pt-3">
-            <h2><?php echo   "<div class='pb-3'>" . $icono_del_curso . "</div>" . $titulo ?></h2>
+            <h2></h2>
         </div>
         <div class="generalContent mb-5">
             <?php echo $descripcion_del_curso; ?>

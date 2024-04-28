@@ -19,7 +19,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>">Inicio</a></li>
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/quienessomos/all/#quienessomos">Quienes somos?</a></li>
+                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/quienessomos/all/">Quiénes somos</a></li>
                 <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/directorio-y-equipo/">Directorio y Equipo</a></li>
                 <li class="ps-3 dropdown"><a href="<?php echo get_site_url(); ?>/servicios">Servicios a la comunidad <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -48,10 +48,10 @@
                     </ul>
                 </li>
                 <!-- <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/noticias#noticias">Noticias</a></li> -->
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/cursos#cursos">Cursos y Talleres</a></li>
+                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/cursos">Cursos y Talleres</a></li>
 
 
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/dondeestamos/all">Dónde estamos?</a></li>
+                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/dondeestamos/all">¿Dónde estamos?</a></li>
                 <li class="ps-3"><?php echo do_shortcode('[weglot_switcher]'); ?></li>
                 <li class="ps-3"><a class="btnHeaderDonar" target="_blank" href="https://app.payku.cl/botonpago/index?idboton=25849&verif=a91e07d0">Dona</a></li>
             </ul>
