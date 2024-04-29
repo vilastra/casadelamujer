@@ -14,16 +14,19 @@ while (have_posts()) {
     $enlace_informacion_servicio = get_field('enlace_informacion_servicio');
 
 ?>
-    <div class="bannerContent">
-        <img src="<?php echo  $imagen_servicio ?>">
-        <div class="container">
-            <div class="subContainer">
-                <h2 class="animate__animated animate__fadeInDown"><?php echo $titulo; ?></h2>
-
-
+    <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>" style="object-position: bottom; background-image: url(<?php echo $imagen_servicio ?>)">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h2 class="animate__animated animate__fadeInDown"><?php echo  $titulo ?></h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <div class="container">
         <div class="section-title mt-5 mb-5">
             <p class="animate__animated animate__fadeInUp"><?php echo $sub_titulo_servicios; ?></p>

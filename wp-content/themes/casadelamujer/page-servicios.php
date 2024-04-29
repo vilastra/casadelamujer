@@ -36,7 +36,6 @@ $imagen_principal_nosotras = get_home_url() . "/wp-content/uploads/2023/11/img1-
     <div class="container">
 
         <div class="section-title">
-            <h2>Servicios que la CASA DE LA MUJER DE HUAMACHUCO entrega a la comunidad</h2>
             <p>La Casa de la Mujer de Huamachuco, entrega diversos servicios a la comunidad, los cuales se llevan a cabo dependiendo de los recursos recaudados para su realización, estos se obtienen a través de donaciones y/o proyectos</p>
         </div>
 
