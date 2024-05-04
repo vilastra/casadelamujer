@@ -18,10 +18,10 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>">Inicio</a></li>
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/quienessomos/all/">Quiénes somos</a></li>
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/directorio-y-equipo/">Directorio y Equipo</a></li>
-                <li class="ps-3 dropdown"><a href="<?php echo get_site_url(); ?>/servicios">Servicios a la comunidad <i class="bi bi-chevron-down"></i></a>
+                <li class="ps-3"><a class="nav-link scrollto <?php echo isset($name) && $name == "" ?  "active" : "" ?>" href="<?php echo get_site_url(); ?>">Inicio</a></li>
+                <li class="ps-3"><a class="nav-link scrollto <?php echo isset($post_type) && $post_type == "quienessomos" ?  "active" : "" ?>" href="<?php echo get_site_url(); ?>/quienessomos/all/">Quiénes somos</a></li>
+                <li class="ps-3"><a class="nav-link scrollto <?php echo isset($name) && $name == "directorio-y-equipo" ?  "active" : "" ?>" href="<?php echo get_site_url(); ?>/directorio-y-equipo/">Directorio y Equipo</a></li>
+                <li class="ps-3 dropdown"><a class="<?php echo isset($name) && $name == "servicios" ?  "active" : "" ?> <?php echo isset($post_type) && $post_type == "servicios" ?  "active" : "" ?>" href="<?php echo get_site_url(); ?>/servicios">Servicios a la comunidad <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <?php
                         $args = array(
@@ -36,8 +36,9 @@
                             $i = 0;
                             while ($query->have_posts()) :
                                 $query->the_post();
+                                $var = $query->post->post_name;
                         ?>
-                                <li><a href="<?php echo get_permalink(); ?>"><?php echo  get_the_title($query->ID); ?></a></li>
+                                <li><a class="<?php  echo isset($name) && $query->post->post_name == $name ? "active" : "" ?>" href="<?php echo get_permalink(); ?>"><?php echo  get_the_title($query->ID); ?></a></li>
                         <?php
                                 $i++;
                             endwhile;
@@ -48,10 +49,8 @@
                     </ul>
                 </li>
                 <!-- <li><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/noticias#noticias">Noticias</a></li> -->
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/cursos">Cursos y Talleres</a></li>
-
-
-                <li class="ps-3"><a class="nav-link scrollto" href="<?php echo get_site_url(); ?>/dondeestamos/all">¿Dónde estamos?</a></li>
+                <li class="ps-3"><a class="nav-link scrollto <?php echo isset($name) && $name == "cursos" ?  "active" : "" ?> <?php echo isset($post_type) && $post_type == "cursostalleres" ?  "active" : "" ?>" href="<?php echo get_site_url(); ?>/cursos">Cursos y Talleres</a></li> 
+                <li class="ps-3"><a class="nav-link scrollto <?php echo isset($post_type) && $post_type == "dondeestamos" ?  "active" : "" ?>" href="<?php echo get_site_url(); ?>/dondeestamos/all">¿Dónde estamos?</a></li>
                 <li class="ps-3"><?php echo do_shortcode('[weglot_switcher]'); ?></li>
                 <li class="ps-3"><a class="btnHeaderDonar" target="_blank" href="https://app.payku.cl/botonpago/index?idboton=25849&verif=a91e07d0">Dona</a></li>
             </ul>

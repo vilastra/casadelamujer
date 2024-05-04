@@ -1,6 +1,6 @@
 <?php wp_footer(); ?>
 <!-- ======= Footer ======= -->
-<footer id="footer" class="text-center">
+<!-- <footer id="footer" class="text-center">
     <div class="container">
         <a href="index.html" class="logo me-auto"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/logoPng.png" alt="" class="img-fluid"></a>
         <p>Siguenos en nuestras redes sociales.</p>
@@ -11,22 +11,22 @@
         <div class="credits">
         </div>
     </div>
-</footer>
+</footer> -->
 
-<!-- <footer id="footer">
+<footer id="footer">
     <div class="container">
         <div class="row mb-2 mt-1">
 
             <div class="col-lg-1">
                 <a href="index.html" class="logo me-auto"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/logoPng.png" alt="" class="img-fluid"></a>
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <div class="p-1">
-                    <p class="mb-1"><b>Acerca de</b></p>
+                    <p class="mb-1"><b></b></p>
                 </div>
-                <div class="p-1">Quiénes somos</div>
-                <div class="p-1">¿Dónde estamos?</div>
-                <div class="p-1">Directorio y Equipo</div>
+                <div class="p-1">Villarrica 2553, Huamachuco 2, Renca</div>
+                <div class="p-1">+56 9 4598 3265</div>
+                <div class="p-1">info@casadelamujer.cl</div>
             </div>
             <div class="col-lg-3">
                 <div class="p-1"><b>
@@ -46,7 +46,7 @@
         <div class="credits">
         </div>
     </div>
-</footer> -->
+</footer>
 
 <!-- <footer id="footer">
     <div class="container">
